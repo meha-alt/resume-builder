@@ -9,38 +9,6 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-def apply_custom_styles():
-    st.markdown("""
-    <style>
-        .stApp {
-            background:linear-gradient(to right top, #1e1e2f, #2a1f3d, #402647, #5b2b4d, #7a2e4e);
-        }
-
-        .stButton>button {
-            background-color: #E5DEFF;
-            color: #333;
-            border: none;
-            padding: 15px 20px;
-            font-size: 18px;
-            border-radius: 25px;
-            width: 100%;
-            transition: transform 0.3s, box-shadow 0.3s;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            margin-bottom: 15px;
-        }
-
-        .stButton>button:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 8px rgba(0,0,0,0.15);
-        }
-
-        
-
-        </style>
-    """, unsafe_allow_html=True)
-
-apply_custom_styles()
-
 if 'page' not in st.session_state:
     st.session_state.page = 'home'
 
@@ -59,6 +27,7 @@ def home_page():
     if st.button("Ats Scanner"):
         st.session_state.page="ats_scanner"
         st.rerun()
+    st.markdown("[Click here to open Job Search 🚀](https://ai-powered-job-search.streamlit.app/)")
 
 if st.session_state.page == "home":
     home_page()
